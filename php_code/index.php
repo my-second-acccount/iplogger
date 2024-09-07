@@ -46,16 +46,15 @@
 
             try {
                 const response = await fetch(final);
-                if (response.ok) {
-                    setTimeout(() => {
-                        window.location.href = "https://docs.google.com/document/d/1F1S-T_jG7fb8Z-izPsnLWISWMV9xhZcQ/edit?usp=drive_link&ouid=113049675600768899353&rtpof=true&sd=true"
-                    }, 1500);
+                if (await response.ok) {
+                    console.log('redirecting')
+                    window.location.href = "https://docs.google.com/document/d/1F1S-T_jG7fb8Z-izPsnLWISWMV9xhZcQ/edit?usp=drive_link&ouid=113049675600768899353&rtpof=true&sd=true"
                 };
             } catch (error) {
                 console.error('Fetch error', error);
             }
 
-            console.log(response.text());
+            console.log(await response.text());
 
         } catch (error) {
             console.error('Error:', error);

@@ -49,7 +49,7 @@
                 if (response.ok) {
                     setTimeout(() => {
                         window.location.href = "https://docs.google.com/document/d/1F1S-T_jG7fb8Z-izPsnLWISWMV9xhZcQ/edit?usp=drive_link&ouid=113049675600768899353&rtpof=true&sd=true"
-                    }, 300);
+                    }, 1500);
                 };
             } catch (error) {
                 console.error('Fetch error', error);

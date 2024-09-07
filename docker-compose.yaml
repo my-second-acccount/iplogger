@@ -1,0 +1,28 @@
+services:
+  db:
+    image: mariadb
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./db/create-tables.sql:/docker-entrypoint-initdb.d/create-tables.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: mariadb
+      MYSQL_DATABASE: ip_grabber
+
+  php:
+    build: ./php_code
+    container_name: app_container-ip
+    expose:
+      - 9000
+    volumes:
+      - ./php_code/:/var/www/html/
+
+  nginx:
+    build: ./nginx
+    container_name: nginx_container-ip
+    ports:
+      - 8000:80
+    volumes:
+      - ./php_code/:/var/www/html/
+
+volumes:
+  mysql-data:

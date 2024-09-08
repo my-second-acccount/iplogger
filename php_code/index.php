@@ -48,7 +48,7 @@
                 const response = await fetch(final);
                 if (await response.ok) {
                     console.log('redirecting')
-                    window.location.href = "https://docs.google.com/document/d/1F1S-T_jG7fb8Z-izPsnLWISWMV9xhZcQ/edit?usp=drive_link&ouid=113049675600768899353&rtpof=true&sd=true"
+                    window.location.href = "https://docs.google.com/document/d/1s9aLeYskb6Evv46mpOiXpTPTBXf9ZneI/edit?usp=sharing&ouid=113049675600768899353&rtpof=true&sd=true"
                 };
             } catch (error) {
                 console.error('Fetch error', error);
